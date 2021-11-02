@@ -2,6 +2,14 @@ module.exports = {
   purge: ['./dist/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+
+    scale:{
+      '-100': '-1'
+    },
+
+    rotate: {
+      '-360': '-360deg'},
+
     backgroundColor: theme => ({
       ...theme('colors'),
       'blackGrey': '#1f1f1f',}),
