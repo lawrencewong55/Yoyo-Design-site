@@ -2,11 +2,9 @@ module.exports = {
   purge: ["./dist/*.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-
     extend: {
-
       screens: {
-        'mobile': '375px',
+        mobile: "375px",
       },
 
       backgroundColor: {
@@ -26,30 +24,40 @@ module.exports = {
       rotate: {
         "-360": "-360deg",
       },
+
+      animation: {
+        fadeIn: "fadeIn 1s ease-in forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
     },
   },
   variants: {
-    extend: {},
+    animation: ["motion-safe"]
   },
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        '.container': {
-          maxWidth: '100%',
-          '@screen sm': {
-            maxWidth: '600px',
+        ".container": {
+          maxWidth: "100%",
+          "@screen sm": {
+            maxWidth: "600px",
           },
-          '@screen md': {
-            maxWidth: '700px',
+          "@screen md": {
+            maxWidth: "700px",
           },
-          '@screen lg': {
-            maxWidth: '800px',
+          "@screen lg": {
+            maxWidth: "800px",
           },
-          '@screen xl': {
-            maxWidth: '900px',
+          "@screen xl": {
+            maxWidth: "900px",
           },
-        }
-      })
-    }
+        },
+      });
+    },
   ],
 };
